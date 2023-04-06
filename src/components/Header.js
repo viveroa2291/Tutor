@@ -12,6 +12,8 @@ const Header = () => {
    // const { isAuthenticated } = useContext(AuthContext);
     return (
 
+     
+
         <nav className="navbar navbar-expand-lg bg-light navigation">
             <Router>
                 <Link class="links" to="/">Home</Link>
@@ -27,6 +29,7 @@ const Header = () => {
            </Router> 
          
            </nav>
+
     );
 };
 
