@@ -1,0 +1,9 @@
+.section-about {
+    margin-top: 5rem;
+}
+.left-side {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5rem;
+    left: 0;
+}
