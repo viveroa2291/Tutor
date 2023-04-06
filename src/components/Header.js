@@ -20,7 +20,7 @@ const Header = () => {
         </div>
         <div className="navigation-div">
         <nav className="navbar navbar-expand-lg bg-light navigation">
-            <Router>
+          
                 <Link  class="nav-link links" to="/">Home</Link>
                 <Link className="nav-link links" to="/schedule">Schedule</Link>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
@@ -52,7 +52,7 @@ const Header = () => {
                 <Link className="nav-link btn links" to="/auth">Login | Signup</Link>
             </ul>
           </div>
-            </Router>
+     
           
         </nav>
       </div>

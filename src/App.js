@@ -10,14 +10,14 @@ function App() {
     <div className='container'>
    <Header/>
 
-    <Router>
+ 
       <Routes>
         <Route path="/" element={<Home/>} exact/>
         <Route path="/auth" element={<Auth/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path="/signup" element={<SignUp/>}/>
       </Routes>
-    </Router>
+  
       
     </div>
   );
