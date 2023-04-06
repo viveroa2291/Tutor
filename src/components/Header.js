@@ -1,23 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router} from 'react-router-dom';
 import './CSS/header.css';
 
-const Header = () => {
+/*
+import { Auth } from './Auth.js';
+import LoggedInHeader from './LoggedInHeader';
+import NotLoggedInHeader from './NotLoggedInHeader';
+*/
+const Header = () => {        
+   // const { isAuthenticated } = useContext(AuthContext);
     return (
-        <div class="navigation">
+
+        <nav className="navbar navbar-expand-lg bg-light navigation">
             <Router>
-            <nav >
-                <Link  className="navbar-brand" to="/">Home</Link>
-                <Link to="/schedule">Schedule</Link>
-                <Link to="/subjects">Subjects</Link>
-                <Link to="/courses">Courses</Link>
-                <Link to="/about">About</Link>
-                <Link to="/account">Account</Link>
-            </nav>
-        </Router>
-        </div>
-        
+                <Link class="links" to="/">Home</Link>
+                <Link class="links" to="/schedule">Schedule</Link>
+                <Link class="links" to="/subjects">Subjects</Link>
+                <Link class="links" to="/courses">Courses</Link>
+                <Link class="links" to="/about">About</Link>
+               
+                <Link className="links" to="/account">Account</Link> 
+                <Link className="links" to="/login">Login/Signup</Link>
+               
+                <Link class="links" to="/account">Account</Link>
+           </Router> 
+         
+           </nav>
     );
 };
 
