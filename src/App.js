@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+<<<<<<< Updated upstream
 
 function App() {
   return (
@@ -18,6 +19,23 @@ function App() {
           Learn React
         </a>
       </header>
+=======
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Auth from "./components/Auth"
+function App() {
+  return (
+    <div className='container'>
+      
+      <Header/>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>} exact/>
+        <Route path="/auth" element={<Auth/>}/>
+      </Routes>
+    </Router>
+      
+>>>>>>> Stashed changes
     </div>
   );
 }
