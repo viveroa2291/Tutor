@@ -17,7 +17,6 @@ function App() {
   return (
     <div className='container'>
 
-
    {showHeader && showSignup && <Header/>}
  
       <Routes>
@@ -30,7 +29,6 @@ function App() {
         <Route path='/tutor' element={<Tutor/>}/>
       </Routes>
   
-    
     </div>
   );
 }
