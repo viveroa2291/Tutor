@@ -3,7 +3,6 @@ import SubjectAPI from '../APIs/SubjectApi'
 const Subjects=()=>{
     const [subjectList,setSubjectList]=useState([])
     useEffect(()=>{
-        console.log("works")
         SubjectAPI.getSubjects(setSubjectList)
     },[])
     return (
@@ -18,7 +17,7 @@ const Subjects=()=>{
             subjectList.map(s=>
             <tr key={s.id}>
                 <td>{s.id}</td>
-                <td>{s.subject}</td>
+                <td>{s.name}</td>
             </tr>)
 }</tbody>
        </div> 
