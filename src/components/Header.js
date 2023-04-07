@@ -14,8 +14,10 @@ const Header = () => {
         <section>
         <div class="logo">
             <hr class="top-line"/>
-            <hr class="vertical-line"/>
-            <p class="text-logo">Mara <br/> Tutoring</p>
+            <div class="logo-line">
+                <hr class="vertical-line"/>
+                <p class="text-logo">Mara <br/> Tutoring</p>
+            </div>
             <hr class="bottom-line"/>
         </div>
         <div className="navigation-div">
