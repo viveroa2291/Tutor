@@ -12,18 +12,18 @@ const Header = () => {
    // const { isAuthenticated } = useContext(AuthContext);
     return (
         <section>
-        <div class="logo">
-            <hr class="top-line"/>
-            <div class="logo-line">
-                <hr class="vertical-line"/>
-                <p class="text-logo">Mara <br/> Tutoring</p>
+        <div className="logo">
+            <hr className="top-line"/>
+            <div className="logo-line">
+                <hr className="vertical-line"/>
+                <p className="text-logo">Mara <br/> Tutoring</p>
             </div>
-            <hr class="bottom-line"/>
+            <hr className="bottom-line"/>
         </div>
         <div className="navigation-div">
         <nav className="navbar navbar-expand-lg bg-light navigation">
           
-                <Link  class="nav-link links" to="/">Home</Link>
+                <Link  className="nav-link links" to="/">Home</Link>
                 <Link className="nav-link links" to="/schedule">Schedule</Link>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav">
