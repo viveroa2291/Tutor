@@ -6,6 +6,7 @@ import About from "./components/About";
 import Auth from "./components/Auth"
 import SignUp from './components/SignUp';
 import Schedule from './components/Schedule';
+import Subjects from './components/Subjects';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path="/signup" element={<SignUp/>}/>
         <Route path='/schedule' element={<Schedule/>}/>
+        <Route path='/subjects' element={<Subjects/>}/>
       </Routes>
   
     
