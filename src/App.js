@@ -7,6 +7,7 @@ import Auth from "./components/Auth"
 import SignUp from './components/SignUp';
 import Schedule from './components/Schedule';
 import Subjects from './components/Subjects';
+import Tutor from './components/Tutor';
 
 function App() {
 
@@ -15,7 +16,6 @@ function App() {
   const showSignup = location.pathname !== '/signup'; // to hide the header from the signup 
   return (
     <div className='container'>
-
 
    {showHeader && showSignup && <Header/>}
  
@@ -26,9 +26,10 @@ function App() {
         <Route path="/signup" element={<SignUp/>}/>
         <Route path='/schedule' element={<Schedule/>}/>
         <Route path='/subjects' element={<Subjects/>}/>
+        <Route path='/tutor' element={<Tutor/>}/>
+ 
       </Routes>
   
-    
     </div>
   );
 }
