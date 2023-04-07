@@ -4,7 +4,11 @@ const SubjectApi={
     getSubjects:(setSubjectList)=>{
         fetch(apiURL,{
             method:'GET',
+            // mode:'no-cors',
             headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Origin':'*',
                 'Authorization':'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZGFuIiwiZXhwIjoxNjgwOTE4ODQxLCJpYXQiOjE2ODA4ODI4NDF9.y3Lf_jSF-gYMNVFZRdotkK8ijz0ADAlTUoOLS7AIQvU'
             }
         }).then((result)=>{
