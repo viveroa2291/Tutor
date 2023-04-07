@@ -27,7 +27,6 @@ function App() {
         <Route path='/schedule' element={<Schedule/>}/>
         <Route path='/subjects' element={<Subjects/>}/>
         <Route path='/tutor' element={<Tutor/>}/>
- 
       </Routes>
   
     </div>
