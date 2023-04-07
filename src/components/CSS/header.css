@@ -20,22 +20,21 @@ section {
 .links:hover {
     opacity: 30%;
 }
-.logo {
-}
 .text-logo {
-    margin-left: 1rem;
+    margin-left: 3.5rem;
 }
 .top-line, .bottom-line {
+    margin-left: 2.5rem;
     color: black;
     border: none;
+    left: 0;
     border-top: 3px solid black; /* change this value to set the thickness */
 }
 .vertical-line {
-    float: left;
-    left: 1.7rem;
+    position: absolute;
+    left: 0;
     top: 2.5rem;
-    margin-right: 1rem;
-    width: 50%;
+    width: 4.5%;
     rotate: 90deg;
     border: none;
     border-top: 3px solid black; /* change this value to set the thickness */
