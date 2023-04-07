@@ -22,12 +22,13 @@ const SignUp=()=>{
     
 <h1>Create Account</h1>
 <form onSubmit={handleSubmit}>
-    <label className='form-label' for="username">User Name</label>
+    
+<label className='form-label' for="username">User Name</label>
     <input className='form-control' name='username'  onChange={(event)=>{setUserName(event.target.value)}}></input>
     <label className='form-label' for="email">Email</label>
     <input className='form-control' name='email'  onChange={(event)=>{setEmail(event.target.value)}}></input>
-    <label className='form-label' for="password" onChange={(event)=>{setPassword(event.target.value)}}>Password</label>
-    <input className='form-control' name='password'></input>
+    <label className='form-label' for="password">Password</label>
+    <input className='form-control' name='password'  onChange={(event)=>{setPassword(event.target.value)}}></input>
     <button className='btn'>Sign Up</button>
 </form>
 </div>
