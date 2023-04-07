@@ -168,3 +168,13 @@ margin: 20px 0;
 .modal-content{
   background: url("images/Abstract_Geometric_Background_1.jpg") center;
 }
+
+.table{
+  margin: auto;
+  width:fit-content;
+  
+}
+th{
+  font-size: 20px ;
+  color: #22A8C1;
+}
