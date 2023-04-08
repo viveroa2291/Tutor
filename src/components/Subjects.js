@@ -13,8 +13,9 @@ const Subjects=()=>{
         <th scope='col'>#</th>
         <th scope='col'>Subject</th>
         </tr></thead>
+
         <tbody>{
-            subjectList.map(s=>
+            subjectList.map(s =>
             <tr key={s.id}>
                 <td>{s.id}</td>
                 <td>{s.name}</td>

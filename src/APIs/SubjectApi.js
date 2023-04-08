@@ -1,13 +1,13 @@
-const apiURL="http://localhost:8080/api/subject"
+const apiURL="http://localhost:8080/api/subject";
 
-const SubjectApi={
+const SubjectApi = {
     getSubjects:(setSubjectList)=>{
-        fetch(apiURL,{
+        fetch(apiURL ,{
             method:'GET',
-            // mode:'no-cors',
-            headers:{
+            headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
+
                 'Authorization':'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbGV4aXMiLCJleHAiOjE2ODA5Mzg1NzcsImlhdCI6MTY4MDkwMjU3N30.lC9zJgl1RWK3vxEQeAFKtsI_XB_Q8cBMGHggad83vWg'
             }
         }).then((result)=>{
@@ -20,4 +20,4 @@ const SubjectApi={
     }
 }
 
-export default SubjectApi
+export default SubjectApi;
