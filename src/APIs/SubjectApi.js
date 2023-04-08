@@ -8,8 +8,7 @@ const SubjectApi={
             headers:{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'Origin':'*',
-                'Authorization':'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZGFuIiwiZXhwIjoxNjgwOTE4ODQxLCJpYXQiOjE2ODA4ODI4NDF9.y3Lf_jSF-gYMNVFZRdotkK8ijz0ADAlTUoOLS7AIQvU'
+                'Authorization':'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbGV4aXMiLCJleHAiOjE2ODA5Mzg1NzcsImlhdCI6MTY4MDkwMjU3N30.lC9zJgl1RWK3vxEQeAFKtsI_XB_Q8cBMGHggad83vWg'
             }
         }).then((result)=>{
             console.log("Result")

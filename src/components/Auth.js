@@ -1,13 +1,35 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-const Auth=()=>{
+import SignInApi from '../APIs/SignInApi';
+const apiURL="http://localhost:8080/authenticate"
+
+
+const Auth=(props)=>{
   const[userName,setUserName]=useState("")
   const[password,setPassword]=useState("")
+  const[jwt,setJWT]=useState("")
   const handleSubmit=event=>{
     const login={
       "username":userName,
       "password":password
     }
+    fetch(apiURL,{
+      method:"POST",
+      headers:{  'Accept': 'application/json',
+          "Content-Type": "application/json"},
+      body:JSON.stringify(login)
+  }).then( result => result.json() ).then(data=>{
+    console.log(data.jwt)
+      setJWT(data.jwt)
+  })
+  .catch( (error) => { console.log(error) } ) 
+  
+  props.history.push({
+    pathname: '/',
+    userName,
+    jwt})
+
+    event.preventDefault()
   }
 return (
   <div className='login-wrapper'>

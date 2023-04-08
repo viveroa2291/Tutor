@@ -3,7 +3,8 @@ import Header from "./Header";
 import { Link } from 'react-router-dom';
 import './CSS/home.css';
 import tutor from '../images/tutor-home.jpeg';
-const Home = () => {
+const Home = (props) => {
+    
     <Header/>
     return (
         <section>
