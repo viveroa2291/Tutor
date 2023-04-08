@@ -16,6 +16,7 @@ const SubjectApi = {
             console.log(result)
             return result.json()
         }).then((data)=>{
+            console.log(data)
             setSubjectList(data)
         }).catch( (error) => { console.log(error) } );
     }
