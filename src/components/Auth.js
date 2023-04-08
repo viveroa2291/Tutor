@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SignInApi from "../APIs/SignInApi";
-import { getAuthToken } from "../Util/auth";
+
 const apiURL = "http://localhost:8080/authenticate";
 
 const Auth = (props) => {
