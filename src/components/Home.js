@@ -1,12 +1,13 @@
 import React from 'react';
 import Header from "./Header";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './CSS/home.css';
 import tutor from '../images/tutor-home.jpeg';
 import { getSignedInUser } from '../Util/auth';
 
 const Home = (props) => {
-
+    let location = useLocation();
+console.log(location.state);
     const user = getSignedInUser();
     const username = user.username;
    // const { username } = props?.location?.state ?? {};

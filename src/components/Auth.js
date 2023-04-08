@@ -94,9 +94,7 @@ const Auth = (props) => {
               setPassword(event.target.value);
             }}
           ></input>
-          <button type="submit" className="btn">
-            Sign In
-          </button>
+          <button type="submit" className="btn" onClick={() => navigate("/", {state: userName})}>Sign In</button>
         </form>
       </div>
       <div className="sign-up">
