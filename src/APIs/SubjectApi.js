@@ -1,14 +1,15 @@
+import { getAuthToken } from "../Util/auth";
 const apiURL="http://localhost:8080/api/subject";
-
 const SubjectApi = {
+
     getSubjects:(setSubjectList)=>{
+        const token=getAuthToken();
         fetch(apiURL ,{
             method:'GET',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-
-                'Authorization':'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbGV4aXMiLCJleHAiOjE2ODA5Mzg1NzcsImlhdCI6MTY4MDkwMjU3N30.lC9zJgl1RWK3vxEQeAFKtsI_XB_Q8cBMGHggad83vWg'
+                'Authorization':'Bearer '+ token
             }
         }).then((result)=>{
             console.log("Result")
