@@ -59,9 +59,7 @@ const Auth = (props) => {
       })
       .catch((error) => {
         console.log(error);
-      })    .catch((error) => {
-        console.log(error);
-      })
+      })  
  
     // props.history.push({
     //   pathname: '/',
@@ -113,5 +111,4 @@ const Auth = (props) => {
     </div>
 )
 }
-};
 export default Auth;

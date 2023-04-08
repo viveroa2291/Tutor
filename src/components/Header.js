@@ -34,7 +34,7 @@ const Header = () => {
                 <Link className='nav-link links' to="/subjects">Subjects</Link>
                 <Link className="nav-link links" to="/about">About</Link>
                 <Link className="nav-link links" to="/account">Account</Link>
-                <Link className="nav-link btn links" to="/auth">Login | Signup</Link>
+                <Link className="nav-link btn links" to="/">Logout</Link>
             </nav>
         </div>
     </section>
