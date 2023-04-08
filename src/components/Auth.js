@@ -60,6 +60,7 @@ const Auth = (props) => {
       .catch((error) => {
         console.log(error);
       })  
+
     // props.history.push({
     //   pathname: '/',
     //   userName,
@@ -108,7 +109,6 @@ const Auth = (props) => {
         </div>
       </div>
     </div>
-
   );
 
 };
