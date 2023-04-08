@@ -54,7 +54,7 @@ const Auth = (props) => {
             localStorage.setItem("username", data.username);
             localStorage.setItem("id", data.id);
             console.log(data);
-            navigate("/");
+            navigate("/student");
           });
       })
       .catch((error) => {
