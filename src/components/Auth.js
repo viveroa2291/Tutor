@@ -17,7 +17,7 @@ const Auth = (props) => {
     fetch(apiURL, {
       method: "POST",
       headers: {
-        Accept: "application/json",
+        "Accept": "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(login),
@@ -37,22 +37,21 @@ const Auth = (props) => {
         return token
       })
       .then((token) => {
-       
         const apiURL2 = "http://localhost:8080/api/user/name/" + userName;
         fetch(apiURL2, {
           method: "GET",
           headers: {
-            Accept: "application/json",
+            "Accept": "application/json",
             "Content-Type": "application/json",
-            Authentication: "Bearer " + token,
+            "Authorization": "Bearer " + token,
           },
         })
           .then((result) => {
-            return result.json;
+
+            return result.json();
           })
           .then((data) => {
             localStorage.setItem("username", data.username);
-            localStorage.setItem("password", data.password);
             localStorage.setItem("id", data.id);
             console.log(data);
             navigate("/");
@@ -109,10 +108,8 @@ const Auth = (props) => {
         </div>
       </div>
     </div>
-<<<<<<< Updated upstream
+
   );
-=======
-)
->>>>>>> Stashed changes
+
 };
 export default Auth;
