@@ -9,12 +9,11 @@ const Subjects=()=>{
         <>
         <h2>Subjects We Tutor In</h2>
        <div className='table table-light mt-3'>
-       <thead className='thead-light'>
-            <tr>
-                <th scope='col'>ID</th>
-                <th scope='col'>Subject</th>
-            </tr>
-        </thead>
+       <thead className='thead-light'><tr>
+        <th scope='col'>#</th>
+        <th scope='col'>Subject</th>
+        </tr></thead>
+
         <tbody>{
             subjectList.map(s =>
             <tr key={s.id}>

@@ -4,6 +4,7 @@ body{
 
 h2,h3{
   text-align: center;
+  font-family: 'Barlow', sans-serif;
 }
 h2,h3{
   color: #22A8C1;
@@ -133,7 +134,7 @@ color: #89D99D;
   align-items: center;
 }
 .links.btn{
-  background-color: rgb(205, 205, 205);
+  background-color:transparent;
 }
 
 .inner-wrapper .btn{
@@ -175,6 +176,10 @@ margin: 20px 0;
   
 }
 th{
-  font-size: 20px ;
+  font-size: 15px ;
   color: #22A8C1;
+  font-family: 'Barlow', sans-serif;
+  width:150px;
+  padding: 10px;
 }
+
