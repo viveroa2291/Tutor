@@ -4,8 +4,13 @@ import { Link } from 'react-router-dom';
 import './CSS/home.css';
 import tutor from '../images/tutor-home.jpeg';
 const Home = (props) => {
+<<<<<<< Updated upstream
     
     <Header/>
+=======
+    const { username } = props?.location?.state ?? {};
+    
+>>>>>>> Stashed changes
     return (
         <section>
             <section class="home-body">
