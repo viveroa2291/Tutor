@@ -8,6 +8,7 @@ import SignUp from './components/SignUp';
 import Schedule from './components/Schedule';
 import Subjects from './components/Subjects';
 import Tutor from './components/Tutor';
+import StudentInfo from './components/StudentInfo';
 
 function App() {
 
@@ -27,6 +28,8 @@ function App() {
         <Route path='/schedule' element={<Schedule/>}/>
         <Route path='/subjects' element={<Subjects/>}/>
         <Route path='/tutor' element={<Tutor/>}/>
+        <Route path='/student' element={<StudentInfo/>}/>
+
       </Routes>
   
     </div>

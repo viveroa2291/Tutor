@@ -2,7 +2,7 @@ import { getAuthToken } from "../Util/auth";
 import { getSignedInUser } from "../Util/auth";
 
 
-UserAPI={
+const UserAPI={
     getStudentSession:(setStudentSessions)=>{
         const token=getAuthToken();
         const id=getSignedInUser().id;
