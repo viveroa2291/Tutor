@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SignInApi from "../APIs/SignInApi";
 import { getAuthToken } from "../Util/auth";
-const apiURL = "http://localhost:8080/authenticate";
+const apiURL = "authenticate";
 
 const Auth = (props) => {
   const navigate = useNavigate();
@@ -59,10 +59,7 @@ const Auth = (props) => {
       })
       .catch((error) => {
         console.log(error);
-      })    .catch((error) => {
-        console.log(error);
-      })
- 
+      })  
     // props.history.push({
     //   pathname: '/',
     //   userName,
@@ -111,7 +108,8 @@ const Auth = (props) => {
         </div>
       </div>
     </div>
-)
-}
+
+  );
+
 };
 export default Auth;
