@@ -1,18 +1,31 @@
-import React from 'react';
-import Header from "./Header";
-import { Link } from 'react-router-dom';
-
+import React, { useEffect, useState } from 'react';
+import TutorAPI from '../APIs/TutorApi'
 const Tutor = () => {
-    <Header/>
+    const [tutorList, setTutorList] = useState([])
+    useEffect(()=>{
+        TutorAPI.getTutors(setTutorList)
+    },[])
     return (
-        <section>
-            <section>
-               <h2>Here is a list of our tutors.</h2>
-            </section>
-            
-        </section>
-        
-    );
-};
-
-export default Tutor;
+        <>
+        <h2>Subjects We Tutor In</h2>
+       <div className='table table-light mt-3'>
+       <thead className='thead-light'>
+            <tr>
+                <th scope='col'>ID</th>
+                <th scope='col'>Tutor</th>
+                <th scope ='col'>Contact</th>
+            </tr>
+        </thead>
+        <tbody>{
+            tutorList.map(t =>
+            <tr key={t.id}>
+                <td>{t.id}</td>
+                <td>{t.username}</td>
+                <td>{t.email}</td>
+            </tr>)
+} </tbody>
+       </div> 
+       </>
+    )
+}
+export default Tutor
