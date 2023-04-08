@@ -7,8 +7,8 @@ const SubjectApi = {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'Origin':'*',
-                'Authorization' : 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZGFuIiwiZXhwIjoxNjgwOTI5MDY3LCJpYXQiOjE2ODA4OTMwNjd9.6XmwrDxtb8v2RGfZXeHbevmWtb8d2xAW62jMVL3gsdg'
+
+                'Authorization':'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbGV4aXMiLCJleHAiOjE2ODA5Mzg1NzcsImlhdCI6MTY4MDkwMjU3N30.lC9zJgl1RWK3vxEQeAFKtsI_XB_Q8cBMGHggad83vWg'
             }
         }).then((result)=>{
             console.log("Result")
