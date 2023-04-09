@@ -65,6 +65,9 @@ section {
 }
 @media (max-width: 1050px) {
     .hamburger {
+        position: absolute;
+        right: 0;
+        margin-right: 1rem;
         display: block;
         width: 40px;
         padding: .5rem;
@@ -87,7 +90,28 @@ section {
         -webkit-transform: rotate(45deg) translate(-8px, -8px);
         transform: rotate(45deg) translate(-8px, -8px);
     }
-
+    .top-nav {
+        display: flex;
+        flex-direction: column; 
+        margin-top: 0;
+    }
+    .navigation-div .navigation {
+        background-color: green;
+        position: fixed; 
+        width: 100%;
+        top: 4.75rem;
+        right: 100%;
+        transition-property: right;
+        transition-duration: .5s;
+        transition-timing-function: ease-in-out;
+        z-index: 1;
+    }
+    .navigation-div .navigation a {
+        text-align: center;
+    }
+    .navigation-div .navigation.show {
+        right: 0;
+    }
     a.nav-link {
         position: relative;
      }
@@ -98,7 +122,7 @@ section {
          height: 2px;
          bottom: 0;
          left: 0;
-         background-color: red;
+         background-color: black;
          visibility: hidden;
          transform: scaleX(0);
          transition: all 0.3s ease-in-out;
@@ -106,5 +130,8 @@ section {
      a.nav-link:hover:before {
          visibility: visible;
          transform: scaleX(.125);
+     }
+     .links {
+        color: black;
      }
 }
