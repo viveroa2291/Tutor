@@ -9,7 +9,7 @@ import Schedule from './components/Schedule';
 import Subjects from './components/Subjects';
 import Tutor from './components/Tutor';
 import StudentInfo from './components/StudentInfo';
-
+import Courses from './components/Courses';
 function App() {
 
   const location = useLocation(); // Created to hide headers
@@ -30,7 +30,7 @@ function App() {
         <Route path='/subjects' element={<Subjects/>}/>
         <Route path='/tutor' element={<Tutor/>}/>
         <Route path='/student' element={<StudentInfo/>}/>
-
+        <Route path='/courses' element={<Courses/>}/>
       </Routes>
   
     </div>

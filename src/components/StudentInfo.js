@@ -12,7 +12,14 @@ const StudentInfo=()=>{
     return(
         <>
         <h2> Welcome {username}! </h2>
-        <h3 className="mt-4">Your past sessions</h3>
+       
+        {sessionList.length===0?
+        <div className='empty'>
+            
+            <p>No Past sessions</p>
+        <button className='btn'>Add a Session</button>
+        </div>: <>
+         <h3 className="mt-4">Your past sessions</h3>
         <div className='table table-light mt-5'>
        <thead className='thead-light'><tr>
         <th scope='col'>#</th>
@@ -21,6 +28,7 @@ const StudentInfo=()=>{
         <th scope='col'>Time Period</th>
         <th scope='col'>Rating</th>
         </tr></thead>
+       
         <tbody>{sessionList.map(s=><tr><td>{s.id}</td>
         <td>{s.course.subject.name}</td>
         <td>{s.course.tutor.username}</td>
@@ -31,6 +39,9 @@ const StudentInfo=()=>{
         
         )}</tbody>
         </div>
+        </>
+        }
+       
         </>
     )
 }

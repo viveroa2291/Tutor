@@ -19,7 +19,7 @@ return (
 <div className='wrapper'>
 <div className='inner-wrapper'>
 <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
-<Link className='btn'>Book a Session</Link>
+<Link className='btn' to="/courses">Book a Session</Link>
 <p>Select a course you want to recieve tutoring in</p>
 </div>
 <div className='inner-wrapper'><FontAwesomeIcon icon="fa-solid fa-person-chalkboard" />
