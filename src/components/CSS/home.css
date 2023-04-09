@@ -1,5 +1,29 @@
+.home-navigation-div {
+    position: absolute;
+    right: 5rem;
+}
+.home-logo {
+    margin-left: 5rem;
+}
+.home-vertical-line {
+    position: absolute;
+    margin-left: 5.5rem;
+    left: 0;
+    top: 2.5rem;
+    width: 4.5%;
+    rotate: 90deg;
+    border: none;
+    border-top: 3px solid black; /* change this value to set the thickness */
+}
+.home-top-line, .home-bottom-line {
+    margin-left: 2.5rem;
+    color: black;
+    border: none;
+    left: 0;
+    border-top: 3px solid black; /* change this value to set the thickness */
+}
 .home-body {
-    margin-top: 5rem;
+    margin-top: 10rem;
 }
 .hr-title {
     display: block;
