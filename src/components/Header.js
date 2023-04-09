@@ -42,7 +42,7 @@ const Header = (props) => {
             </div>
             <hr className="bottom-line"/>
         </div>
-        <div id="hamburger" classs="hamburger">
+        <div id="hamburger" className="hamburger">
             <hr className='hr1'/>
             <hr className='hr2'/>
             <hr className='hr3'/>
@@ -55,6 +55,7 @@ const Header = (props) => {
                 <Link className='nav-link links' to="/subjects">Subjects</Link>
                 <Link className="nav-link links" to="/about">About</Link>
                 <Link className="nav-link links" to="/account">Account</Link>
+                <Link className="nav-link btn links" to="/">Logout</Link>
                 {/* isLoggedIn ? (
                     <Link className="nav-link btn links" to="/" onClick={handleLogout}>Logout</Link>
 

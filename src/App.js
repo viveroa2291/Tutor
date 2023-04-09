@@ -9,7 +9,7 @@ import Schedule from './components/Schedule';
 import Subjects from './components/Subjects';
 import Tutor from './components/Tutor';
 import StudentInfo from './components/StudentInfo';
-
+import Footer from './components/Footer';
 function App() {
 
   const location = useLocation(); // Created to hide headers
@@ -32,7 +32,7 @@ function App() {
         <Route path='/student' element={<StudentInfo/>}/>
 
       </Routes>
-  
+    <Footer/>
     </div>
   );
 }
