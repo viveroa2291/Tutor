@@ -1,10 +1,11 @@
 import CourseApi from "../APIs/CourseApi";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-
+import { Link, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import { getSignedInUser } from "../Util/auth";
 import SessionApi from "../APIs/SessionApi";
 const Courses=()=>{
+     const navigate=useNavigate()
     const [courseList,setCourseList]=useState([])
     const [courseID,setCourseID]=useState(0)
     const [starttime,setStartTime]=useState("")
@@ -17,6 +18,7 @@ const session={
     "course_id":courseID,
     "user_id":userID
 }
+
 SessionApi.addSession(session)
 event.preventDefault()
     }

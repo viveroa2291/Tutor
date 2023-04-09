@@ -21,7 +21,7 @@ const StudentInfo=()=>{
         <Link className='btn' to="/courses">Add a Session</Link>
         </div>: <>
          <h3 className="mt-4">Your past sessions</h3>
-        <div className='table table-light mt-5'>
+        <table className='table table-light mt-5'>
        <thead className='thead-light'><tr>
         <th scope='col'>#</th>
         <th scope='col'>Subject</th>
@@ -39,7 +39,7 @@ const StudentInfo=()=>{
         
         
         )}</tbody>
-        </div>
+        </table>
         </>
         }
        
