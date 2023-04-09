@@ -49,7 +49,7 @@ const Header = (props) => {
         </div>
         <div className="navigation-div">
             <nav className="navbar navbar-expand-lg bg-light navigation top-nav">
-                <Link  className="nav-link links" to="/">Home</Link>
+                <Link  className="nav-link links" to="/student">Home</Link>
                 <Link className='nav-link links' to="/tutor">Tutors</Link>
                 <Link className="nav-link links" to="/schedule">Schedule</Link>
                 <Link className='nav-link links' to="/subjects">Subjects</Link>
