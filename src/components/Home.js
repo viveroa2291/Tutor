@@ -6,7 +6,7 @@ import tutor from '../images/tutor-home.jpeg';
 const Home = (props) => {
      // const { username } = props?.location?.state ?? {};
     return (
-        <section>
+        <section className='whole-body'>
             <section className='header'>
                 <div className="home-logo">
                     <hr className="home-top-line"/>
