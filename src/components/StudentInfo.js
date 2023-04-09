@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import UserAPI from '../APIs/UserAPI'
 import { getSignedInUser } from '../Util/auth'
-const StudentInfo=()=>{
-    const [sessionList,setSessionList]=useState([])
-    const user=getSignedInUser()
-    const username=user.username
-    useEffect(()=>{
+const StudentInfo = () => {
+    const [sessionList, setSessionList] = useState([])
+    const user = getSignedInUser()
+    const username = user.username
+    useEffect(() => {
         UserAPI.getStudentSession(setSessionList)
         console.log(sessionList)
-    },[])
-    return(
+    }, [])
+    return (
         <>
         <h2> Welcome {username}! </h2>
         <h3 className="mt-4">Your past sessions</h3>

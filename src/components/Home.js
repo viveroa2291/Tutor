@@ -6,7 +6,7 @@ import tutor from '../images/tutor-home.jpeg';
 
 const Home = (props) => {
      // const { username } = props?.location?.state ?? {};
- 
+    
     return (
         <section>
             <section class="home-body">
