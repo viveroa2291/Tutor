@@ -1,15 +1,36 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router} from 'react-router-dom';
 import './CSS/header.css';
 import Auth from "./Auth";
+import { getSignedInUser } from '../Util/auth';
 /*
 import { Auth } from './Auth.js';
 import LoggedInHeader from './LoggedInHeader';
 import NotLoggedInHeader from './NotLoggedInHeader';
 */
-const Header = () => {        
-   // const { isAuthenticated } = useContext(AuthContext);
+const Header = (props) => {        
+   /* const { isAuthenticated } = useContext(AuthContext);
+   const [isLoggedIn, setIsLoggedIn] = useState(false);
+   const [username, setUsername] = useState('');
+
+    // Check if user is logged in on page load
+  useEffect(() => {
+    const user = getSignedInUser();
+    if (user.id && user.username) {
+      setIsLoggedIn(true);
+      setUsername(user.username);
+    }
+  }, []);
+
+  function handleLogout() {
+    setIsLoggedIn(false);
+    setUsername('');
+    localStorage.removeItem('token');
+    localStorage.removeItem('id');
+    localStorage.removeItem('username');
+  }
+*/
     return (
         
     <section>
@@ -34,7 +55,13 @@ const Header = () => {
                 <Link className='nav-link links' to="/subjects">Subjects</Link>
                 <Link className="nav-link links" to="/about">About</Link>
                 <Link className="nav-link links" to="/account">Account</Link>
-                <Link className="nav-link btn links" to="/">Logout</Link>
+                {/* isLoggedIn ? (
+                    <Link className="nav-link btn links" to="/" onClick={handleLogout}>Logout</Link>
+
+                ) : (                   
+                  <Link className="nav-link btn links" to="/signup">Login</Link>
+                  )
+                */}
             </nav>
         </div>
     </section>

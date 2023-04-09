@@ -10,6 +10,7 @@ const Auth = (props) => {
   const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     const login = {
       username: userName,
       password: password,
@@ -60,13 +61,14 @@ const Auth = (props) => {
       .catch((error) => {
         console.log(error);
       })  
- 
+      /*
+      props.setIsLoggedIn(true);
+      props.setUsername(userName);
+      */
     // props.history.push({
     //   pathname: '/',
     //   userName,
     //   jwt})
-
-    event.preventDefault();
   };
   return (
     <div className="login-wrapper">
@@ -77,22 +79,20 @@ const Auth = (props) => {
           <input
             type="text"
             name="username"
-            value={userName}
             className="form-control"
             placeholder="User Name"
-            onChange={(event) => {
-              setUserName(event.target.value);
-            }}
+            value={userName}
+            // onChange={(event) => {setUserName(event.target.value);} }
+            onChange={(event) => setUserName(event.target.value) }
           ></input>
           <input
             type="password"
             name="password"
-            value={password}
             className="form-control"
             placeholder="Password"
-            onChange={(event) => {
-              setPassword(event.target.value);
-            }}
+            value={password}
+            // onChange={(event) => { setPassword(event.target.value); }}
+            onChange={(event) => setPassword(event.target.value) }
           ></input>
           <button type="submit" className="btn">
             Sign In
