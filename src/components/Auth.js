@@ -4,7 +4,7 @@ import SignInApi from "../APIs/SignInApi";
 
 const apiURL = "http://localhost:8080/authenticate";
 
-const Auth = (props) => {
+const Auth = () => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");

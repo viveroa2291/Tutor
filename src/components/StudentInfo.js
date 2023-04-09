@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import UserAPI from '../APIs/UserAPI'
+import { Link} from "react-router-dom";
 import { getSignedInUser } from '../Util/auth'
 const StudentInfo=()=>{
     const [sessionList,setSessionList]=useState([])
@@ -17,7 +18,7 @@ const StudentInfo=()=>{
         <div className='empty'>
             
             <p>No Past sessions</p>
-        <button className='btn'>Add a Session</button>
+        <Link className='btn' to="/courses">Add a Session</Link>
         </div>: <>
          <h3 className="mt-4">Your past sessions</h3>
         <div className='table table-light mt-5'>
