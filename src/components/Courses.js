@@ -15,17 +15,17 @@ const Courses=()=>{
 const session={
     "end":endtime,
     "start":starttime,
-    "course_id":courseID,
-    "user_id":userID
+    "course":{"id":courseID},
+    "user": {"id": userID}
 }
-
+console.log(session)
 SessionApi.addSession(session)
 event.preventDefault()
     }
     
     useEffect(()=>{
         CourseApi.getCourses(setCourseList)
-        setUserID(getSignedInUser().id)
+        setUserID(parseInt(getSignedInUser().id))
     },[])
     return (
         <>
