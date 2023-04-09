@@ -10,10 +10,9 @@
     margin-right: 10rem;
     margin-left: 10rem;
 }
-.search-bar {
-    position: absolute;
-    right: 100px;
-    float: right;
+.tutor {
+    line-height: 1.5;
+    font-family: 'Times New Roman', Times, serif;
 }
 .about-image {
     width: 350px;
@@ -42,4 +41,33 @@
     position: absolute;
     right: 10rem;
     font-size: 50px;
+}
+@media (max-width: 1050px) { 
+    .section-about {
+        display: flex;
+        flex-direction: column;
+    }
+    .left-side {
+        margin: auto;
+    }
+    .about-image {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+        width: 250px;
+    }
+    .about-us {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    .tutor {
+        text-align: center;
+    }
+    .learn {
+        margin-bottom: 5rem;
+    }
 }

@@ -5,13 +5,12 @@ import './CSS/about.css';
 const About = () => {
     return (
         <section>                
-            <input className='search-bar' type="text" placeholder="Search..."/>
              <section className='section-about'>        
                 <div className='left-side'>
-                    <h4>Lets find a tutor <br/>that matches your needs.</h4>
+                    <h4 className='tutor'>Lets find a tutor <br/>that matches your needs.</h4>
                     <img className='about-image' src={cloud} alt="Default"/>
                 </div>
-                <div>         
+                <div className='about-us'>         
                     <h2>About Us</h2>
                     <p>Here at Mara Tutoring, we match you with a student or a tutor depending on what your needs are. After you completed your session, we suggest you rate your tutor based on your experience. </p>
                     <p>We offer a variety of subjects that you can choose from with no limits on grade level. Anybody can be tutored on here from elementary school level up to post college graduate school levels. </p>
