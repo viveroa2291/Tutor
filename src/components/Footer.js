@@ -1,13 +1,11 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { BrowserRouter as Router} from 'react-router-dom';
+import React from 'react';
 import './CSS/footer.css';
 
 const Footer = () => {        
     return (
         
     <section className='footer-section'>
-       <p className='copyright'>© Mara Tutoring</p>
+       <p className='copyright'>Copyright © 2023 By Mara Tutoring</p>
     </section>
     )
 }

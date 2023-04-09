@@ -24,6 +24,7 @@
 }
 .home-body {
     margin-top: 10rem;
+    
 }
 .hr-title {
     display: block;
@@ -68,20 +69,31 @@
     width: 600px;
 }
 @media (max-width: 1050px) {
+    .header {
+        margin-bottom: 5rem;
+    }
+    .home-logo {
+        margin-left: 0;
+    }
     .home-body {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+        margin-left: 0;
     }
     .left-div {
         display: block;
-        margin-left: auto;
         margin-right: auto;
+        margin-left: auto;
+        width: 100%;
     }
     .body-text {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 18px;
         margin-top: 1rem;
-        width: 100%;
-        text-align: center;
     }
     .started {
         padding: 7.5px 25px;
@@ -100,6 +112,10 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 300px;
+        width: 250px;
+    }
+    .home-vertical-line {
+        margin-left: 0;
+        width: 15%;
     }
 }

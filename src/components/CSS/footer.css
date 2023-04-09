@@ -5,7 +5,7 @@
     text-align: center;
 }
 .copyright {
-    position: block;
+    display: block;
     margin-right: auto;
     margin-left: auto;
 }

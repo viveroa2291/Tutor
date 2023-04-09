@@ -7,19 +7,22 @@ const Home = (props) => {
      // const { username } = props?.location?.state ?? {};
     return (
         <section>
-            <div className="home-logo">
-                <hr className="home-top-line"/>
-                <div className="logo-line">
-                    <hr className="home-vertical-line"/>
-                    <p className="text-logo">Mara <br/> Tutoring</p>
+            <section className='header'>
+                <div className="home-logo">
+                    <hr className="home-top-line"/>
+                    <div className="logo-line">
+                        <hr className="home-vertical-line"/>
+                        <p className="text-logo">Mara <br/> Tutoring</p>
+                    </div>
+                    <hr className="home-bottom-line"/>
                 </div>
-                <hr className="home-bottom-line"/>
-            </div>
-            <div className="home-navigation-div">
-                <nav className="navbar navbar-expand-lg bg-light navigation top-nav">
-                    <Link className="nav-link btn links" to="/signup">Login</Link>
-                </nav>
-            </div>
+                <div className="home-navigation-div">
+                    <nav className="navbar navbar-expand-lg bg-light navigation top-nav">
+                        <Link className="nav-link btn links" to="/signup">Login</Link>
+                    </nav>
+                </div>
+            </section>
+            
             <section className="home-body">
                <div className="left-div">
                     <h2>World Class Tutoring Network</h2>
