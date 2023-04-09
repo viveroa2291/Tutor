@@ -5,12 +5,12 @@ import React, { useEffect, useState } from 'react';
 import { getSignedInUser } from "../Util/auth";
 import SessionApi from "../APIs/SessionApi";
 const Courses=()=>{
-     const navigate=useNavigate()
     const [courseList,setCourseList]=useState([])
     const [courseID,setCourseID]=useState(0)
     const [starttime,setStartTime]=useState("")
     const [endtime,setEndTime]=useState("")
     const [userID,setUserID]=useState(0)
+    console.log(courseList);
    const  handleSubmit=(event)=>{
 const session={
     "end":endtime,
@@ -56,10 +56,9 @@ event.preventDefault()
                 <td>{t.hourly}</td>
                 <td>{t.availability}</td>
                 <td><button data-bs-toggle="modal" data-bs-target="#staticBackdrop" onClick={(()=>setCourseID(t.id))}><FontAwesomeIcon icon="fa-solid fa-calendar-plus" /></button>
-                
-                
                 </td>
-            </tr>)
+                </tr>
+            )
 }
         </tbody>
         </table>

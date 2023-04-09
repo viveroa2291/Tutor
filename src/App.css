@@ -145,6 +145,9 @@ color: #89D99D;
 .fa-magnifying-glass, .fa-person-chalkboard{
   font-size: 60px;
 }
+.fa-pen-to-square{
+  color: #22A8C1;
+}
 .inner-wrapper{
   height: 50vh;
   background-color: white;
