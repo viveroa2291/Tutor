@@ -23,8 +23,7 @@
     border-top: 3px solid black; /* change this value to set the thickness */
 }
 .home-body {
-    margin-top: 10rem;
-    
+    margin-top: 1rem;
 }
 .hr-title {
     display: block;
@@ -71,6 +70,10 @@
 @media (max-width: 1050px) {
     .header {
         margin-bottom: 5rem;
+    }
+    .whole-body {
+        display: flex;
+        flex-direction: column;
     }
     .home-logo {
         margin-left: 0;
