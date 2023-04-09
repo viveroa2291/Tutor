@@ -12,6 +12,26 @@ h2,h3{
 h5{
   color: #89D99D;
 }
+th{
+  font-size: 15px ;
+  color: #22A8C1;
+  font-family: 'Barlow', sans-serif;
+  width:150px;
+  padding: 10px;
+}
+
+.empty{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  background-color: white;
+  height: 150px;
+  width: 250px;
+  border-radius: 20px;
+  filter: drop-shadow(1px 1px 2px grey);
+}
 .login-wrapper{
   display: flex;
  height: 100%;
@@ -137,16 +157,25 @@ color: #89D99D;
   background-color:transparent;
 }
 
-.inner-wrapper .btn{
+.inner-wrapper .btn,.empty .btn{
 background-color: #22A8C1;
 color: white;
 border-radius: 30px;
 margin: 20px 0; 
 
 }
+.empty .btn {
+  width: 60%;
+  margin: 0;
+}
+.fa-calendar-plus{
+  color: black;
+  font-size: 1.25em;
+}
 
-.inner-wrapper .btn:hover{
-  background-color: #1c5b92;
+.inner-wrapper .btn:hover, .empty .btn:hover, .table .btn{
+ background-color: #22A8C1;
+  color: black;
 }
 
 
@@ -175,11 +204,3 @@ margin: 20px 0;
   width:fit-content;
   
 }
-th{
-  font-size: 15px ;
-  color: #22A8C1;
-  font-family: 'Barlow', sans-serif;
-  width:150px;
-  padding: 10px;
-}
-

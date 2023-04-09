@@ -7,7 +7,7 @@ const Tutor = () => {
     },[])
     return (
         <>
-        <h2>Subjects We Tutor In</h2>
+        <h2>Tutors</h2>
        <div className='table table-light mt-3'>
        <thead className='thead-light'>
             <tr>

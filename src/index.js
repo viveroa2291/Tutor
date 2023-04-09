@@ -8,7 +8,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faPersonChalkboard } from '@fortawesome/free-solid-svg-icons';
-library.add(faMagnifyingGlass,faPersonChalkboard)
+import { faCalendarPlus } from '@fortawesome/free-solid-svg-icons';
+library.add(faMagnifyingGlass,faPersonChalkboard,faCalendarPlus)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
