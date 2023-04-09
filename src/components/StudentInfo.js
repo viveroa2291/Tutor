@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import UserAPI from '../APIs/UserAPI'
+import CourseApi from "../APIs/CourseApi";
 import { Link} from "react-router-dom";
 import { getSignedInUser } from '../Util/auth'
-const StudentInfo = () => {
-    const [sessionList, setSessionList] = useState([])
-    const user = getSignedInUser()
-    const username = user.username
-    useEffect(() => {
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+const StudentInfo=()=>{
+    const [sessionList,setSessionList]=useState([])
+    const [courseList,setCourseList]=useState([]);
+    const user=getSignedInUser()
+    const username=user.username
+    useEffect(()=>{
         UserAPI.getStudentSession(setSessionList)
+        CourseApi.getCourseByUser(setCourseList)
         console.log(sessionList)
-    }, [])
-    return (
+    },[])
+    return(
         <>
         <h2> Welcome {username}! </h2>
        
@@ -30,7 +34,7 @@ const StudentInfo = () => {
         <th scope='col'>Rating</th>
         </tr></thead>
        
-        <tbody>{sessionList.map(s=><tr><td>{s.id}</td>
+        <tbody>{sessionList.map((s)=>(<tr><td>{s.id}</td>
         <td>{s.course.subject.name}</td>
         <td>{s.course.tutor.username}</td>
         <td>{s.start.join('/').substring(0,8)} - {s.end.join('/').substring(0,8)}</td>
@@ -38,10 +42,36 @@ const StudentInfo = () => {
         </tr>
         
         
-        )}</tbody>
+        ))}</tbody>
         </table>
-        </>
-        }
+         </>}
+        <h3 className="mt-5">Courses you Offer</h3>
+          <table className="table table-light mt-3">
+            <thead className="thead-light">
+              <tr>
+                <th>#</th>
+                <th>Subject</th>
+                <th>Availability</th>
+                <th>Hourly</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+            {courseList.map((c) => (
+                <tr>
+                  <td>{c.id}</td>
+                  <td>{c.subject.name}</td>
+                 <td>{c.availability}</td>
+                 <td>${c.hourly}</td>
+                 <td><FontAwesomeIcon icon="fa-solid fa-pen-to-square" /></td>
+                </tr>
+              ))}
+                </tbody>
+          </table>
+      
+    
+       
+        
        
         </>
     )

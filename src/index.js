@@ -9,7 +9,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faPersonChalkboard } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarPlus } from '@fortawesome/free-solid-svg-icons';
-library.add(faMagnifyingGlass,faPersonChalkboard,faCalendarPlus)
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+library.add(faMagnifyingGlass,faPersonChalkboard,faCalendarPlus,faPenToSquare)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
