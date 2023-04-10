@@ -1,0 +1,76 @@
+.welcome-username {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.student-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.left-side {
+    width: 100%;
+    margin-bottom: 5rem;
+}
+.enrolled-sessions-title {
+    font-size: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tutoring-sessions-title {
+    font-size: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tutoring-hr {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    color: black;
+    width: 50%;
+    line-height: 0;
+}
+.right-side {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.courses-offer-title {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+th {
+    border: solid black 2px;
+}
+tr {
+    border: solid black 2px;
+}
+td {   
+    border: solid black 2px;
+    font-size: 12px;
+}
+.time-period {
+    font-size: 13px;
+    text-align: center;
+    width: 500px;
+}
+.tutor-period {
+    width: 1000px;
+}
+@media (max-width: 1050px) { 
+    .student-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .right-side {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        margin-bottom: 5rem;
+    }
+}
