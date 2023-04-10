@@ -151,9 +151,7 @@ const StudentInfo=()=>{
                             setSubjectID(event.target.value);
                         }}
                         >
-                        <option disabled selected>
-                            Select an Option
-                        </option>
+                        <option disabled selected className='option-selector'>Select an Option</option>
                         {subjectList.map((s) => (
                             <option key={s.id} value={s.id}>{s.name} </option>
                         ))}
@@ -186,14 +184,8 @@ const StudentInfo=()=>{
                         ></input>
                     </div>
                     <div className="modal-footer">
-                        <input type="submit" className="btn" value="Submit"></input>
-                        <button
-                        type="button"
-                        className="btn"
-                        data-bs-dismiss="modal"
-                        >
-                        Close
-                        </button>
+                        <input type="submit" className="btn submit-button" value="Submit"></input>
+                        <button type="button" className="btn close-button" data-bs-dismiss="modal">Close</button>
                         </div>
                     </form>
                 </div>
