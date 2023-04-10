@@ -23,6 +23,23 @@ const SessionApi={
             console.log(data)
         }).catch((error)=>{console.log(error)})
     },
+    updateSession:(sessionToUpdate)=>{
+        const token=getAuthToken();
+        fetch(`http://localhost:8080/api/session/rating/${sessionToUpdate.id}/${sessionToUpdate.rating}` ,{
+            method:'PATCH',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization':'Bearer '+ token
+            }
+        }).then((result)=>{
+            console.log("Result")
+            console.log(result)
+            return result.json()
+        }).then((data)=>{
+            console.log(data)
+        }).catch( (error) => { console.log(error) } );
+    },
 
     getTutorSession:(setTutorList)=>{
         const token=getAuthToken();
