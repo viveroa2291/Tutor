@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import SubjectAPI from '../APIs/SubjectApi'
+import SubjectAPI from '../APIs/SubjectApi';
+import './CSS/subjects.css';
 const Subjects=()=>{
     const [subjectList,setSubjectList]=useState([])
     useEffect(()=>{
@@ -9,9 +10,9 @@ const Subjects=()=>{
         <>
         <h2>Subjects We Tutor In</h2>
       <div className='table-div'>
-           <table className='table table-light mt-3'>
+           <table className='table table-light mt-3 mb-5'>
            <thead className='thead-light'><tr>
-            <th scope='col'>#</th>
+            <th className='id-column' scope='col'>#</th>
             <th scope='col'>Category</th>
             <th scope='col'>Subject</th>
             <th scope='col'>Description</th>

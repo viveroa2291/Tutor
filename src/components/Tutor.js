@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import TutorAPI from '../APIs/TutorApi'
+import TutorAPI from '../APIs/TutorApi';
+import './CSS/tutor.css';
 const Tutor = () => {
     const [tutorList, setTutorList] = useState([])
     useEffect(()=>{
