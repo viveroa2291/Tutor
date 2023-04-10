@@ -20,12 +20,11 @@ const StudentInfo=()=>{
     const username=user.username
     const handleSubmit = (event) => {
         const course = {
-          "subject": {"id": SubjectID},
           "hourly": Hourly,
           "availability": Availability,
         }
         console.log(course)
-    CourseApi.addCourse(course)
+   // CourseApi.addCourse(course)
     event.preventDefault()
     
       };
@@ -119,60 +118,65 @@ const StudentInfo=()=>{
                     </tr>
                 ))}
                     </tbody>
-            </table>
-            <div
-            className="modal fade"
-            id="staticBackdrop"
-            data-bs-backdrop="static"
-            data-bs-keyboard="false"
-            tabIndex="-1"
-            aria-labelledby="staticBackdropLabel"
-            aria-hidden="true"
-            >
-            <div className="modal-dialog">
-                <div className="modal-content">
-                <div className="modal-header">
-                    <h5 className="modal-title" id="staticBackdropLabel">
-                    Edit Course
-                    </h5>
-                    <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                    ></button>
-                </div>
-                <div className="modal-body">
-                    <form className="form" onSubmit={handleSubmit}>
-                    <select
-                        className="form-control"
-                        value={SubjectID}
-                        onChange={(event) => {
-                            setSubjectID(event.target.value);
-                        }}
-                        >
-                        <option disabled selected>
-                            Select an Option
-                        </option>
-                        {subjectList.map((s) => (
-                            <option key={s.id} value={s.id}>{s.name} </option>
-                        ))}
-                        </select>
-                    
-                    <div className="row mb-3">
-                        <label className="form-label">Hourly Rate</label>
-                        <input
-                        type="number"
-                        className="form-control"
-                        required
-                        min="0"
-                        step="0.01"
-                        value={Hourly}
-                        onChange={(event) => {
-                            setHourly(event.target.value);
-                        }}
-                        />
-                    </div>
+              </table>
+              </section>
+        
+        
+         
+        
+          <div
+          className="modal fade"
+          id="staticBackdrop"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabIndex="-1"
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="staticBackdropLabel">
+                  Edit Course
+                </h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div className="modal-body">
+                <form className="form" onSubmit={handleSubmit}>
+                <select
+                      className="form-control"
+                      value={SubjectID}
+                      onChange={(event) => {
+                        setSubjectID(event.target.value);
+                      }}
+                    >
+                      <option disabled selected>
+                        Select an Option
+                      </option>
+                      {subjectList.map((s) => (
+                        <option key={s.id} value={s.id}>{s.name} </option>
+                      ))}
+                    </select>
+                  
+                  <div className="row mb-3">
+                    <label className="form-label">Hourly Rate</label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      required
+                      min="0"
+                      step="0.01"
+                      value={Hourly}
+                      onChange={(event) => {
+                        setHourly(event.target.value);
+                      }}
+                    />
+                  </div>
 
                     <div className="row mb-3">
                         <label className="form-label">Availability</label>
@@ -201,7 +205,7 @@ const StudentInfo=()=>{
             </div>
             </div>
         </section>
-        </section>
+
         </>
     )
 }

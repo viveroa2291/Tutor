@@ -56,5 +56,22 @@ addCourse:(courseToAdd)=>{
 .then(data=>{
     console.log(data)
 }).catch((error)=>{console.log(error)})
+},
+updateCourse:(courseToUpdate)=>{
+    const token=getAuthToken();
+    fetch(apiURL3 ,{
+        method:'PUT',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization':'Bearer '+ token
+        },
+        body:JSON.stringify(courseToAdd)
+}).then(result=>result.json())
+.then(data=>{
+    console.log(data)
+}).catch((error)=>{console.log(error)})
 }}
+
+
 export default CourseApi;
