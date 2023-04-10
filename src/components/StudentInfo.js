@@ -184,6 +184,7 @@ const StudentInfo = () => {
           </table>
         </section>
 
+
         <div
           className="modal fade"
           id="staticBackdrop"
@@ -235,10 +236,10 @@ const StudentInfo = () => {
                     ></input>
                   </div>
                   <div className="modal-footer">
-                    <input type="submit" className="btn" value="Submit"></input>
+                    <input type="submit" className="btn submit-button" value="Submit"></input>
                     <button
                       type="button"
-                      className="btn"
+                      className="btn close-button"
                       data-bs-dismiss="modal"
                     >
                       Close
@@ -246,6 +247,8 @@ const StudentInfo = () => {
                   </div>
                 </form>
               </div>
+              
+        
             </div>
           </div>
         </div>

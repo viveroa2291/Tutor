@@ -74,7 +74,7 @@ const Header = (props) => {
                 <Link className='nav-link links' to="/tutor">Tutors</Link>
                 <Link className='nav-link links' to="/subjects">Subjects</Link>
                 <Link className="nav-link links" to="/about">About</Link>
-                <Link className="nav-link links" to="/account">Account</Link>
+                
                 <Link className="nav-link btn links" to="/">Logout</Link>
                 {/* isLoggedIn ? (
                     <Link className="nav-link btn links" to="/" onClick={handleLogout}>Logout</Link>
