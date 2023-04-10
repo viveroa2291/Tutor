@@ -1,5 +1,5 @@
 import { redirect } from "react-router-dom";
-const apiURL = "http://localhost:8080/api/user";
+const apiURL = "http://54.67.47.110:8080/api/user";
 
 const SignupApi = {
 

@@ -2,8 +2,8 @@ import { getAuthToken, getSignedInUser } from "../Util/auth"
 import {useEffect} from 'react'
 const token=getAuthToken()
 const userID=getSignedInUser().id
-const apiURL="http://localhost:8080/api/session"
-const apiURL2="http://localhost:8080/api/tutor/session/"+userID
+const apiURL="http://54.67.47.110:8080/api/session"
+const apiURL2="http://54.67.47.110:8080/api/tutor/session/"+userID
 const SessionApi={
   
     addSession:(sessionToCreate)=>{
@@ -25,7 +25,7 @@ const SessionApi={
     },
     updateSession:(sessionToUpdate)=>{
         const token=getAuthToken();
-        fetch(`http://localhost:8080/api/session/rating/${sessionToUpdate.id}/${sessionToUpdate.rating}` ,{
+        fetch(`http://54.67.47.110:8080/api/session/rating/${sessionToUpdate.id}/${sessionToUpdate.rating}` ,{
             method:'PATCH',
             headers: {
                 'Accept': 'application/json',
