@@ -39,6 +39,14 @@ const StudentInfo=()=>{
         <>
         <h2 className='welcome-username'> Welcome to your home {username}! </h2>
         <hr className='tutoring-hr'/>
+        <div className='student-top-nav'>
+            <h2 className='selection-header'>Select a Section</h2>
+            <hr className='selection-hr'/>
+            <a className='student-top-links' href="#enrolled-sessions">Enrolled Sessions</a>
+            <a className='student-top-links' href="#tutoring-sessions">Tutoring Sessions</a>
+            <a className='student-top-links' href="#courses-offered">Courses Offered</a>
+        </div>
+     
         <section className='student-body'> 
         <section className='left-side'>
              {sessionList.length===0?
@@ -47,79 +55,86 @@ const StudentInfo=()=>{
             <Link className='btn' to="/courses">Add a Session</Link>
             </div>: 
         <>
-            <h3 className="mt-3 enrolled-sessions-title">Your Enrolled Sessions</h3>
+            <h3 className="mt-3 enrolled-sessions-title" id="enrolled-session">Your Enrolled Sessions</h3>
             <hr className='tutoring-hr'/>
-            <table className='table table-light mt-3'>
-        <thead className='thead-light'><tr>
-            <th scope='col'>#</th>
-            <th scope='col'>Subject</th>
-            <th scope='col'>Tutor</th>
-            <th scope='col' className='time-period'>Time Period</th>
-            <th scope='col'>Rating</th>
-            <th scope='col'>Actions</th>
-            </tr></thead>
+        <div className='enrolled-sessions-table'>
+            <table className='table table-light mt-3 '>
+            <thead className='thead-light'><tr>
+                <th scope='col'>#</th>
+                <th scope='col'>Subject</th>
+                <th scope='col'>Tutor</th>
+                <th scope='col' className='time-period'>Time Period</th>
+                <th scope='col'>Rating</th>
+                <th scope='col'>Actions</th>
+                </tr></thead>
+            
+                <tbody>{sessionList.map((s)=>(<tr><td>{s.id}</td>
+                <td>{s.course.subject.name}</td>
+                <td>{s.course.tutor.username}</td>
+                <td className='time-period-description'>{s.start.join('/').substring(0,8)} - {s.end.join('/').substring(0,8)}</td>
+                <td>{s.rating}</td>
+                <td><FontAwesomeIcon icon="fa-solid fa-pen-to-square" /></td>
+                </tr>
+                ))}</tbody>
+                </table> 
+        </div>
         
-            <tbody>{sessionList.map((s)=>(<tr><td>{s.id}</td>
-            <td>{s.course.subject.name}</td>
-            <td>{s.course.tutor.username}</td>
-            <td className='time-period-description'>{s.start.join('/').substring(0,8)} - {s.end.join('/').substring(0,8)}</td>
-            <td>{s.rating}</td>
-            <td><FontAwesomeIcon icon="fa-solid fa-pen-to-square" /></td>
-            </tr>
-            ))}</tbody>
-            </table>
             </>}
 
-            <h3 className='mt-5 mb-2 tutoring-sessions-title'>Your Tutoring Sessions</h3>
+            <h3 className='mt-5 mb-2 tutoring-sessions-title' id="tutoring-sessions">Your Tutoring Sessions</h3>
             <hr className='tutoring-hr'/>
-            <table className='table table-light mt-3'>
-                <thead className='thead-light'>
-            <tr> 
-                <th>Subject</th>
-                <th>Period</th>
-                <th>User</th>
-                <th>User Email</th>
-                <th>Cost</th>
-            </tr>
-                </thead>
-                <tbody>{
-                    tutorList.map((t)=>(
-                        <tr>
-                            <td>{t.course.subject.name}</td>
-                            <td className='tutor-period'>{t.start.join("/").substring(0,8)} {t.start.join(":").substring(9)} - {t.end.join("/").substring(0,8)} {t.end.join(":").substring(9)}</td>
-                            <td>{t.user.username}</td>
-                            <td><a href="mailto:`${t.user.email}`">{t.user.email}</a></td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+            <div className='tutoring-sessions-table' >
+                <table className='table table-light mt-3 '>
+                    <thead className='thead-light'>
+                <tr> 
+                    <th>Subject</th>
+                    <th>Period</th>
+                    <th>User</th>
+                    <th>User Email</th>
+                    <th>Cost</th>
+                </tr>
+                    </thead>
+                    <tbody>{
+                        tutorList.map((t)=>(
+                            <tr>
+                                <td>{t.course.subject.name}</td>
+                                <td className='tutor-period'>{t.start.join("/").substring(0,8)} {t.start.join(":").substring(9)} - {t.end.join("/").substring(0,8)} {t.end.join(":").substring(9)}</td>
+                                <td>{t.user.username}</td>
+                                <td><a href="mailto:`${t.user.email}`">{t.user.email}</a></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table> 
+            </div>
         </section>
         <section className='right-side'>
-            <h3 className="mt-3 courses-offer-title">Courses you Offer</h3>
+            <h3 className="mt-3 courses-offer-title" id="courses-offered">Courses you Offer</h3>
             <hr className='tutoring-hr'/>
-            <table className="table table-light mt-3">
-                <thead className="thead-light">
-                <tr>
-                    <th>#</th>
-                    <th>Subject</th>
-                    <th>Availability</th>
-                    <th>Hourly</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                {courseList.map((c) => (
+            <div className='courses-offered-table'>
+                <table className="table table-light mt-3">
+                    <thead className="thead-light">
                     <tr>
-                    <td>{c.id}</td>
-                    <td>{c.subject.name}</td>
-                    <td>{c.availability}</td>
-                    <td>${c.hourly}</td>
-                    <td><button data-bs-toggle="modal" data-bs-target="#staticBackdrop" onClick={(()=>setCourseID(c.id))}><FontAwesomeIcon icon="fa-solid fa-pen-to-square" /></button></td>
+                        <th>#</th>
+                        <th>Subject</th>
+                        <th>Availability</th>
+                        <th>Hourly</th>
+                        <th>Actions</th>
                     </tr>
-                ))}
-                    </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+
+                    {courseList.map((c) => (
+                        <tr>
+                        <td>{c.id}</td>
+                        <td>{c.subject.name}</td>
+                        <td>{c.availability}</td>
+                        <td>${c.hourly}</td>
+                        <td><button data-bs-toggle="modal" data-bs-target="#staticBackdrop" onClick={(()=>setCourseID(c.id))}><FontAwesomeIcon icon="fa-solid fa-pen-to-square" /></button></td>
+                        </tr>
+                    ))}
+                        </tbody>
+                </table>
+            </div>
             <div
             className="modal fade"
             id="staticBackdrop"
