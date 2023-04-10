@@ -13,13 +13,13 @@ const Schedule = () => {
   const [UserID, setUserID]=useState(0)
   const handleSubmit = (event) => {
     const course = {
-      "subject_id": SubjectID,
+      "subject": {"id": SubjectID},
       "hourly": Hourly,
       "availability": Availability,
-      "user_id":UserID
+      "tutor":{"id":UserID}
     }
     console.log(course)
-//CourseApi.addCourse(course)
+CourseApi.addCourse(course)
 event.preventDefault()
 
   };

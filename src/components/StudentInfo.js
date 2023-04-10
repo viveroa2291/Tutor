@@ -1,18 +1,38 @@
 import React, { useEffect, useState } from 'react'
 import UserAPI from '../APIs/UserAPI'
 import CourseApi from "../APIs/CourseApi";
+import SessionApi from '../APIs/SessionApi';
 import { Link} from "react-router-dom";
 import { getSignedInUser } from '../Util/auth'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 const StudentInfo=()=>{
+    const [subjectList, setSubjectList] = useState([]);
     const [sessionList,setSessionList]=useState([])
     const [courseList,setCourseList]=useState([]);
+    const [tutorList,setTutorList]=useState([]);
+    const [Availability, setAvailability] = useState("");
+    const [Hourly, setHourly] = useState(0);
+    const [CourseID,setCourseID]=useState(0);
+    const [SubjectID, setSubjectID]=useState(0)
     const user=getSignedInUser()
     const username=user.username
+    const handleSubmit = (event) => {
+        const course = {
+          "subject": {"id": SubjectID},
+          "hourly": Hourly,
+          "availability": Availability,
+        
+        }
+        console.log(course)
+    CourseApi.addCourse(course)
+    event.preventDefault()
+    
+      };
     useEffect(()=>{
         UserAPI.getStudentSession(setSessionList)
         CourseApi.getCourseByUser(setCourseList)
-        console.log(sessionList)
+        SessionApi.getTutorSession(setTutorList)
+       
     },[])
     return(
         <>
@@ -24,7 +44,7 @@ const StudentInfo=()=>{
             <p>No Past sessions</p>
         <Link className='btn' to="/courses">Add a Session</Link>
         </div>: <>
-         <h3 className="mt-4">Your past sessions</h3>
+         <h3 className="mt-4">Your Enrolled Sessions</h3>
         <table className='table table-light mt-5'>
        <thead className='thead-light'><tr>
         <th scope='col'>#</th>
@@ -32,6 +52,7 @@ const StudentInfo=()=>{
         <th scope='col'>Tutor</th>
         <th scope='col'>Time Period</th>
         <th scope='col'>Rating</th>
+        <th scope='col'>Actions</th>
         </tr></thead>
        
         <tbody>{sessionList.map((s)=>(<tr><td>{s.id}</td>
@@ -39,13 +60,38 @@ const StudentInfo=()=>{
         <td>{s.course.tutor.username}</td>
         <td>{s.start.join('/').substring(0,8)} - {s.end.join('/').substring(0,8)}</td>
         <td>{s.rating}</td>
+        <td><FontAwesomeIcon icon="fa-solid fa-pen-to-square" /></td>
         </tr>
         
         
         ))}</tbody>
         </table>
          </>}
-        <h3 className="mt-5">Courses you Offer</h3>
+
+         <h3 className='mt-5'>Your Tutoring Sessions</h3>
+        <table className='table table-light mt-3'>
+            <thead className='thead-light'>
+           <tr> <th>Subject</th>
+            <th>Period</th>
+            <th>User</th>
+            <th>User Email</th>
+            <th>Cost</th>
+            </tr>
+            </thead>
+
+            <tbody>{
+                tutorList.map((t)=>(
+                    <tr><td>{t.course.subject.name}</td>
+                    <td>{t.start.join("/").substring(0,8)} {t.start.join(":").substring(9)} - {t.end.join("/").substring(0,8)} {t.end.join(":").substring(9)}</td>
+                    <td>{t.user.username}</td>
+                    <td><a href="mailto:`${t.user.email}`">{t.user.email}</a></td>
+                    
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+
+        <h3 className="mt-5 ">Courses you Offer</h3>
           <table className="table table-light mt-3">
             <thead className="thead-light">
               <tr>
@@ -57,18 +103,98 @@ const StudentInfo=()=>{
               </tr>
             </thead>
             <tbody>
+
             {courseList.map((c) => (
                 <tr>
                   <td>{c.id}</td>
                   <td>{c.subject.name}</td>
                  <td>{c.availability}</td>
                  <td>${c.hourly}</td>
-                 <td><FontAwesomeIcon icon="fa-solid fa-pen-to-square" /></td>
+                 <td><button data-bs-toggle="modal" data-bs-target="#staticBackdrop" onClick={(()=>setCourseID(c.id))}><FontAwesomeIcon icon="fa-solid fa-pen-to-square" /></button></td>
                 </tr>
               ))}
                 </tbody>
           </table>
-      
+          <div
+          className="modal fade"
+          id="staticBackdrop"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabIndex="-1"
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="staticBackdropLabel">
+                  Edit Course
+                </h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div className="modal-body">
+                <form className="form" onSubmit={handleSubmit}>
+                <select
+                      className="form-control"
+                      value={SubjectID}
+                      onChange={(event) => {
+                        setSubjectID(event.target.value);
+                      }}
+                    >
+                      <option disabled selected>
+                        Select an Option
+                      </option>
+                      {subjectList.map((s) => (
+                        <option key={s.id} value={s.id}>{s.name} </option>
+                      ))}
+                    </select>
+                  
+                  <div className="row mb-3">
+                    <label className="form-label">Hourly Rate</label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      required
+                      min="0"
+                      step="0.01"
+                      value={Hourly}
+                      onChange={(event) => {
+                        setHourly(event.target.value);
+                      }}
+                    />
+                  </div>
+
+                  <div className="row mb-3">
+                    <label className="form-label">Availability</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={Availability}
+                      onChange={(event) => {
+                        setAvailability(event.target.value);
+                      }}
+                    ></input>
+                  </div>
+                  <div className="modal-footer">
+                    <input type="submit" className="btn" value="Submit"></input>
+                    <button
+                      type="button"
+                      className="btn"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
     
        
         

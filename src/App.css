@@ -210,5 +210,6 @@ margin: 20px 0;
 .table{
   margin: auto;
   width:fit-content;
-  
+  max-height: 300px;
+overflow-y: scroll;
 }
