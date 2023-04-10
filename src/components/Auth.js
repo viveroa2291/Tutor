@@ -48,7 +48,6 @@ const Auth = () => {
           },
         })
           .then((result) => {
-
             return result.json();
           })
           .then((data) => {
