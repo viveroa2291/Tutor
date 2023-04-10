@@ -22,7 +22,9 @@ const Schedule = () => {
       "tutor":{"id":UserID}
     }
     console.log(course)
-CourseApi.addCourse(course)
+CourseApi.addCourse(course).then(()=>{
+  navigate("/student")
+})
 event.preventDefault()
 
   };
