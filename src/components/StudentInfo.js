@@ -37,14 +37,14 @@ const StudentInfo=()=>{
     return(
         <>
         <h2> Welcome {username}! </h2>
-       
+        <h3 className="mt-4">Your Enrolled Sessions</h3>
         {sessionList.length===0?
         <div className='empty'>
             
             <p>No Past sessions</p>
         <Link className='btn' to="/courses">Add a Session</Link>
         </div>: <>
-         <h3 className="mt-4">Your Enrolled Sessions</h3>
+         
        <div className='table-div'>
             <table className='table table-light mt-5'>
            <thead className='thead-light'><tr>
@@ -69,8 +69,12 @@ const StudentInfo=()=>{
             </table>
        </div >
          </>}
-
          <h3 className='mt-5'>Your Tutoring Sessions</h3>
+            {tutorList.length===0? <><div className='empty'>
+            
+            <p>No Past sessions</p>
+            <Link className='btn' to="/schedule">Add a Course</Link>
+            </div></>:<>
          <div className='table-div'>
         <table className='table table-light mt-3'>
             <thead className='thead-light'>
@@ -121,6 +125,9 @@ const StudentInfo=()=>{
                     </tbody>
               </table>
          </div >
+         </>
+         }
+        
           <div
           className="modal fade"
           id="staticBackdrop"
