@@ -8,24 +8,26 @@ const Subjects=()=>{
     return (
         <>
         <h2>Subjects We Tutor In</h2>
-       <div className='table table-light mt-3'>
-       <thead className='thead-light'><tr>
-        <th scope='col'>#</th>
-        <th scope='col'>Category</th>
-        <th scope='col'>Subject</th>
-        <th scope='col'>Description</th>
-        </tr></thead>
-
-        <tbody>{
-            subjectList.map(s =>
-            <tr key={s.id}>
-                <td>{s.id}</td>
-                <td>{s.category}</td>
-                <td>{s.name}</td>
-                <td>{s.description}</td>
-            </tr>)
-}</tbody>
-       </div> 
+      <div className='table-div'>
+           <table className='table table-light mt-3'>
+           <thead className='thead-light'><tr>
+            <th scope='col'>#</th>
+            <th scope='col'>Category</th>
+            <th scope='col'>Subject</th>
+            <th scope='col'>Description</th>
+            </tr></thead>
+    
+            <tbody>{
+                subjectList.map(s =>
+                <tr key={s.id}>
+                    <td>{s.id}</td>
+                    <td>{s.category}</td>
+                    <td>{s.name}</td>
+                    <td>{s.description}</td>
+                </tr>)
+    }</tbody>
+           </table> 
+      </div >
        </>
     )
 }
