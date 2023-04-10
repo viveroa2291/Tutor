@@ -1,9 +1,9 @@
 import { getAuthToken } from "../Util/auth";
 import { getSignedInUser } from "../Util/auth";
 const userID=getSignedInUser().id
-const apiURL1="http://localhost:8080/api/course"
-const apiURL2="http://localhost:8080/api/course/user_id/"+userID
-const apiURL3="http://localhost:8080/api/course/update"
+const apiURL1="http://54.67.47.110:8080/api/course"
+const apiURL2="http://54.67.47.110:8080/api/course/user_id/"+userID
+const apiURL3="http://54.67.47.110:8080/api/course/update"
 const CourseApi={
 getCourses:(setCourseList)=>{
     const token=getAuthToken();

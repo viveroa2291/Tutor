@@ -32,9 +32,9 @@ const SignUp = () => {
             <label className='form-label' for="username">User Name</label>
                 <input className='form-control' name='username' onChange={(event)=>{setUserName(event.target.value)}}></input>
                 <label className='form-label' for="email">Email</label>
-                <input className='form-control' name='email' onChange={(event)=>{setEmail(event.target.value)}}></input>
+                <input className='form-control' type='email' name='email' onChange={(event)=>{setEmail(event.target.value)}}></input>
                 <label className='form-label' for="password">Password</label>
-                <input className='form-control' name='password' onChange={(event)=>{setPassword(event.target.value)}}></input>
+                <input className='form-control' name='password' type='password' onChange={(event)=>{setPassword(event.target.value)}}></input>
                 <button className='btn sign-up-button'>Sign Up</button>
             </form>
           </div>
