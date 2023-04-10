@@ -7,6 +7,7 @@ import { getSignedInUser } from "../Util/auth";
 import "./CSS/student.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+
 const StudentInfo = () => {
   const [subjectList, setSubjectList] = useState([]);
   const [sessionList, setSessionList] = useState([]);
@@ -54,6 +55,13 @@ const StudentInfo = () => {
     <>
       <h2 className="welcome-username"> Welcome to your home {username}! </h2>
       <hr className="tutoring-hr" />
+         <div className='student-top-nav'>
+            <h2 className='selection-header'>Select a Section</h2>
+            <hr className='selection-hr'/>
+            <a className='student-top-links' href="#enrolled-sessions">Enrolled Sessions</a>
+            <a className='student-top-links' href="#tutoring-sessions">Tutoring Sessions</a>
+            <a className='student-top-links' href="#courses-offered">Courses Offered</a>
+        </div>
       <section className="student-body">
         <section className="left-side">
           {sessionList.length === 0 ? (
@@ -65,10 +73,11 @@ const StudentInfo = () => {
             </div>
           ) : (
             <>
-              <h3 className="mt-3 enrolled-sessions-title">
+              <h3 className="mt-3 enrolled-sessions-title" id="enrolled-session">
                 Your Enrolled Sessions
               </h3>
               <hr className="tutoring-hr" />
+             <div className='enrolled-sessions-table'>
               <table className="table table-light mt-3">
                 <thead className="thead-light">
                   <tr>
@@ -109,13 +118,15 @@ const StudentInfo = () => {
                   ))}
                 </tbody>
               </table>
+</div>
             </>
           )}
 
-          <h3 className="mt-5 mb-2 tutoring-sessions-title">
+          <h3 className="mt-5 mb-2 tutoring-sessions-title" id="tutoring-sessions">
             Your Tutoring Sessions
           </h3>
           <hr className="tutoring-hr" />
+            <div className='tutoring-sessions-table' >
           <table className="table table-light mt-3">
             <thead className="thead-light">
               <tr>
@@ -145,10 +156,12 @@ const StudentInfo = () => {
               ))}
             </tbody>
           </table>
+ </div>
         </section>
         <section className="right-side">
-          <h3 className="mt-3 courses-offer-title">Courses you Offer</h3>
+          <h3 className="mt-3 courses-offer-title"  id="courses-offered">Courses you Offer</h3>
           <hr className="tutoring-hr" />
+              <div className='courses-offered-table'>
           <table className="table table-light mt-3">
             <thead className="thead-light">
               <tr>
@@ -182,7 +195,9 @@ const StudentInfo = () => {
               ))}
             </tbody>
           </table>
+</div>
         </section>
+
 
 
         <div

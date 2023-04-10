@@ -2,7 +2,7 @@ body{
   background-color: rgb(240, 240, 240);
 }
 
-h2,h3{
+h2, h3{
   text-align: center;
   font-family: 'Barlow', sans-serif;
 }
@@ -54,24 +54,21 @@ form{
   width: 100vw;
 }
 .sign-up{
-display: flex;
-flex-direction: column;
-background: url("images/Abstract_Geometric_Background_1.jpg") center;
-height: 100%;
-width: 40%;
-color: white;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  background: url("images/Abstract_Geometric_Background_1.jpg") center;
+  height: 100%;
+  width: 40%;
+  color: white;
+  justify-content: center;
+  align-items: center;
 }
 .signup-wrapper2{
   width:100vw;
   display: flex;
   height: 30%;
-
   font-size: 20px;
-
   height: 100%;
-  
   background-size: cover;
 }
 
@@ -206,12 +203,9 @@ margin: 20px 0;
 .modal-content{
   background: url("images/Abstract_Geometric_Background_1.jpg") center;
 }
-
-
 .table-div{
   margin: auto;
   width:900px;
-  max-height: 300px;
+  max-height: 1000px;
   overflow-y: auto;
-  
 }
