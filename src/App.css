@@ -207,9 +207,11 @@ margin: 20px 0;
   background: url("images/Abstract_Geometric_Background_1.jpg") center;
 }
 
-.table{
+
+.table-div{
   margin: auto;
-  width:fit-content;
+  width:900px;
   max-height: 300px;
-overflow-y: scroll;
+  overflow-y: auto;
+  
 }

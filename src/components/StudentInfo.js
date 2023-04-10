@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import UserAPI from '../APIs/UserAPI'
+import React, { useEffect, useState } from 'react';
+import UserAPI from '../APIs/UserAPI';
 import CourseApi from "../APIs/CourseApi";
 import SessionApi from '../APIs/SessionApi';
 import { Link} from "react-router-dom";
-import { getSignedInUser } from '../Util/auth'
+import { getSignedInUser } from '../Util/auth';
 import './CSS/student.css';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+
 const StudentInfo=()=>{
     const [subjectList, setSubjectList] = useState([]);
     const [sessionList,setSessionList]=useState([])

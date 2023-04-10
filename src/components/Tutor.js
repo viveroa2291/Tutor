@@ -8,7 +8,8 @@ const Tutor = () => {
     return (
         <>
         <h2>Tutors</h2>
-       <div className='table table-light mt-3'>
+        <div className='table-div'>
+       <table className='table table-light mt-3'>
        <thead className='thead-light'>
             <tr>
                 <th scope='col'>ID</th>
@@ -24,7 +25,8 @@ const Tutor = () => {
                 <td>{t.email}</td>
             </tr>)
 } </tbody>
-       </div> 
+       </table> 
+       </div>
        </>
     )
 }

@@ -36,7 +36,7 @@ event.preventDefault()
             <p>No Available Courses</p>
         
         </div>: <>
-      
+      <div className="table-div">
         <table className='table table-light mt-5'>
        <thead className='thead-light'><tr>
         <th scope='col'>#</th>
@@ -62,6 +62,7 @@ event.preventDefault()
 }
         </tbody>
         </table>
+        </div>
         <div className="modal fade" id="staticBackdrop" 
          data-bs-backdrop="static" 
          data-bs-keyboard="false" 
