@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import CourseApi from "../APIs/CourseApi";
 import SubjectApi from "../APIs/SubjectApi";
 import { getSignedInUser } from "../Util/auth";
 import './CSS/schedule.css';
 const Schedule = () => {
+
+  const navigate = useNavigate();
+
   const [SubjectID, setSubjectID] = useState(0);
   const [subjectList, setSubjectList] = useState([]);
   const [Availability, setAvailability] = useState("");
@@ -27,6 +30,10 @@ event.preventDefault()
     SubjectApi.getSubjects(setSubjectList);
     setUserID(getSignedInUser().id)
   }, []);
+  function successAdd() {
+      alert("Session Added!");
+   //   navigate("/schedule");
+  }
   return (
     <section className="schedule-body">
       <div className="schedule-title">
@@ -40,9 +47,7 @@ event.preventDefault()
             </div>
             <div className="second inner-wrapper">
               <FontAwesomeIcon icon="fa-solid fa-person-chalkboard" />
-              <button type="button" className="btn add-session" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Add a Session
-              </button>
+              <button type="button" className="btn add-session" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add a Session</button>
               <p>Add a course you want to tutor, add a rate and allow students to schedule you</p>
             </div>
           <div className="modal fade" id="staticBackdrop"
@@ -109,7 +114,7 @@ event.preventDefault()
                       ></input>
                     </div>
                     <div className="modal-footer">
-                      <input type="submit" className="btn submit-button" value="Submit"></input>
+                      <input type="submit" className="btn submit-button" value="Submit" onClick={successAdd} data-bs-dismiss="modal"></input>
                       <button type="button" className="btn close-button" data-bs-dismiss="modal">Close</button>
                     </div>
                   </form>

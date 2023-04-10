@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SignInApi from "../APIs/SignInApi";
+import './CSS/auth.css';
 
 const apiURL = "http://localhost:8080/authenticate";
 
@@ -75,36 +76,16 @@ const Auth = () => {
         <h1>Login to Your Account</h1>
 
         <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="username"
-            className="form-control"
-            placeholder="User Name"
-            value={userName}
-            // onChange={(event) => {setUserName(event.target.value);} }
-            onChange={(event) => setUserName(event.target.value) }
-          ></input>
-          <input
-            type="password"
-            name="password"
-            className="form-control"
-            placeholder="Password"
-            value={password}
-            // onChange={(event) => { setPassword(event.target.value); }}
-            onChange={(event) => setPassword(event.target.value) }
-          ></input>
-          <button type="submit" className="btn">
-            Sign In
-          </button>
+            <input type="text" name="username" className="form-control" placeholder="User Name" value={userName} onChange={(event) => setUserName(event.target.value) }></input>
+            <input type="password" name="password" className="form-control" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value) }></input>
+            <button type="submit" className="btn sign-in-button"> Sign In </button>
         </form>
       </div>
       <div className="sign-up">
         <div className="signup-wrapper">
           <h1>New Here?</h1>
           <p>Sign up to tutor and help others</p>
-          <Link className="btn" to="/signup">
-            Sign Up
-          </Link>
+          <Link className="btn" to="/signup"> Sign Up </Link>
         </div>
       </div>
     </div>
