@@ -100,8 +100,10 @@ const StudentInfo = () => {
                       <td>{s.course.subject.name}</td>
                       <td>{s.course.tutor.username}</td>
                       <td className="time-period-description">
-                        {s.start.join("/").substring(0, 8)} -{" "}
-                        {s.end.join("/").substring(0, 8)}
+                      {s.start.join("/").substring(0, 8)}{" "}
+                    {s.start.join(":").substring(9)} -{" "}
+                    {s.end.join("/").substring(0, 8)}{" "}
+                    {s.end.join(":").substring(9)}
                       </td>
                       <td>{s.rating}</td>
                       <td>${s.cost}</td>
