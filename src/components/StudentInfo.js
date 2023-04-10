@@ -121,17 +121,22 @@ const StudentInfo = () => {
 </div>
             </>
           )}
-
+          
           <h3 className="mt-5 mb-2 tutoring-sessions-title" id="tutoring-sessions">
             Your Tutoring Sessions
           </h3>
+          {tutorList.length===0? <><div className='empty'>
+
+            <p>You don't offer any courses</p>
+            <Link className='btn' to="/schedule">Add a Course</Link>
+            </div></>:<>
           <hr className="tutoring-hr" />
             <div className='tutoring-sessions-table' >
           <table className="table table-light mt-3">
             <thead className="thead-light">
               <tr>
                 <th>Subject</th>
-                <th>Period</th>
+                <th className="period-header">Period</th>
                 <th>User</th>
                 <th>User Email</th>
                 <th>Cost</th>
@@ -157,7 +162,9 @@ const StudentInfo = () => {
             </tbody>
           </table>
  </div>
+ </>}
         </section>
+        {tutorList.length===0? <></>:<>
         <section className="right-side">
           <h3 className="mt-3 courses-offer-title"  id="courses-offered">Courses you Offer</h3>
           <hr className="tutoring-hr" />
@@ -198,7 +205,7 @@ const StudentInfo = () => {
 </div>
         </section>
 
-
+        </>}
 
         <div
           className="modal fade"
