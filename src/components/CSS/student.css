@@ -61,11 +61,17 @@ td {
     width: 1000px;
 }
 .enrolled-sessions-table, .tutoring-sessions-table, .courses-offered-table {
-    max-height: 1000px;
+    max-height: 500px;
     overflow-y: auto;
 }
 .student-top-nav {
     display: none;
+}
+.period-content{
+    width: fit-content;
+}
+td{
+    width: fit-content;
 }
 @media (max-width: 1050px) { 
     .student-body {
@@ -87,6 +93,7 @@ td {
         max-height: 600px;
         overflow-y: auto;
     }
+
     .student-top-nav {
         display: block;
         margin-bottom: 1rem;
