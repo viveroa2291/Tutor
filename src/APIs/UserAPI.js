@@ -6,7 +6,7 @@ const UserAPI={
     getStudentSession:(setStudentSessions)=>{
         const token=getAuthToken();
         const id=getSignedInUser().id;
-        const apiURL=`http://54.67.47.110:8080/api/student/session/${id}` 
+        const apiURL=`http://localhost:8080/api/student/session/${id}` 
 fetch(apiURL,{
 method:"GET",
 headers:{

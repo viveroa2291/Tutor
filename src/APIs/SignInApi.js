@@ -1,4 +1,4 @@
-const apiURL="http://54.67.47.110:8080/authenticate"
+const apiURL="http://localhost:8080/authenticate"
 
 const SignInApi={
    validateCreds:(credsToValidate)=>{
