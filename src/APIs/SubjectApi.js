@@ -1,5 +1,5 @@
 import { getAuthToken } from "../Util/auth";
-const apiURL="http://54.67.47.110:8080/api/subject";
+const apiURL="http://localhost:8080/api/subject";
 const SubjectApi = {
 
     getSubjects:(setSubjectList)=>{

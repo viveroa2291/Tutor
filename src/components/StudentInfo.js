@@ -129,8 +129,8 @@ const StudentInfo = () => {
           </h3>
           {tutorList.length===0? <><div className='empty'>
 
-            <p>You don't offer any courses</p>
-            <Link className='btn' to="/schedule">Add a Course</Link>
+            <p>No Past Sessions</p>
+           
             </div></>:<>
           <hr className="tutoring-hr" />
             <div className='tutoring-sessions-table' >
@@ -166,7 +166,7 @@ const StudentInfo = () => {
  </div>
  </>}
         </section>
-        {tutorList.length===0? <></>:<>
+        {courseList.length===0? <></>:<>
         <section className="right-side">
           <h3 className="mt-3 courses-offer-title"  id="courses-offered">Courses you Offer</h3>
           <hr className="tutoring-hr" />
@@ -194,7 +194,7 @@ const StudentInfo = () => {
                       data-bs-target="#staticBackdrop"
                       onClick={() => {
                         setCourseID(c.id);
-                        
+                        setSubjectID(c.subject.id);
                       }}
                     >
                       <FontAwesomeIcon icon="fa-solid fa-pen-to-square" />

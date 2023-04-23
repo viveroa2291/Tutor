@@ -22,9 +22,7 @@ const Schedule = () => {
       "tutor":{"id":UserID}
     }
     console.log(course)
-CourseApi.addCourse(course).then(()=>{
-  navigate("/student")
-})
+CourseApi.addCourse(course)
 event.preventDefault()
 
   };
@@ -32,10 +30,7 @@ event.preventDefault()
     SubjectApi.getSubjects(setSubjectList);
     setUserID(getSignedInUser().id)
   }, []);
-  function successAdd() {
-      alert("Session Added!");
-   //   navigate("/schedule");
-  }
+ 
   return (
     <section className="schedule-body">
       <div className="schedule-title">
@@ -116,7 +111,7 @@ event.preventDefault()
                       ></input>
                     </div>
                     <div className="modal-footer">
-                      <input type="submit" className="btn submit-button" value="Submit" onClick={successAdd} data-bs-dismiss="modal"></input>
+                      <input type="submit" className="btn submit-button" value="Submit"  data-bs-dismiss="modal"></input>
                       <button type="button" className="btn close-button" data-bs-dismiss="modal">Close</button>
                     </div>
                   </form>
